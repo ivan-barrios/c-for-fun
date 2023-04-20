@@ -23,8 +23,6 @@ int main()
     Estudiante est;
     printf("Ingrese los datos: \n");
     read(&est);
-
-    printf("%s", est.apellido);
     imprimir(est);
 
 

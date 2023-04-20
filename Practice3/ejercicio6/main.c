@@ -25,6 +25,7 @@ int main()
 
     printf(fecha1.comp == fecha2.comp ? "Son iguales" : "Son distintos");
 
+    printf("fecha1: %d del %d del %d", fecha1.datos_fecha.day, fecha1.datos_fecha.month, fecha1.datos_fecha.year);
 
 
     return 0;
