@@ -24,6 +24,7 @@ int main()
     imprimirDatos(pa, n);
     max = maxNum(pa, n);
     printf(" El Mayor Numero es: %d", max);
+    free(pa);
     return 0;
 }
 
