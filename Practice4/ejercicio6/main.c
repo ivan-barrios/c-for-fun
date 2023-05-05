@@ -16,7 +16,7 @@ void agregarAlInicio(Nodo **, int);
 
 void agregarAlFinal(Nodo **, int);
 
-//int cantElementos(ListaInt * lista);
+int cantElementos(Nodo *lista);
 
 void imprimirLista(Nodo *);
 
@@ -30,8 +30,9 @@ int main()
     agregarAlInicio(&lista, 5);
     agregarAlFinal(&lista, 6);
     imprimirLista(lista);
-    eliminarTodo(&lista);
-    imprimirLista(lista);
+    printf("%d", cantElementos(lista));
+    //eliminarTodo(&lista);
+    //imprimirLista(lista);
 
     return 0;
 }
@@ -72,6 +73,15 @@ void agregarAlFinal(Nodo **lista, int num) {
         aux->sig = nuevo;
     }
 
+}
+
+int cantElementos(Nodo *lista) {
+    int cont = 0;
+    while (lista != NULL) {
+        cont++;
+        lista = lista->sig;
+    }
+    return cont;
 }
 
 void imprimirLista(Nodo *lista) {
