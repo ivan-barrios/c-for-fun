@@ -10,12 +10,16 @@ int main(){
         printf ("\nError al abrir archivo fuente\n");
         return 1;
     }
+
+    // leer una linea del archivo
+    fgets(linea,LONG,f);
     while (!feof(f)){
-        // leer una linea del archivo
-        fgets(linea,LONG,f);
         // imprimir la linea en la pantalla
         puts(linea);
+        // leer una linea del archivo
+        fgets(linea,LONG,f);
     }
+
     fclose(f);
     return 0;
 }
