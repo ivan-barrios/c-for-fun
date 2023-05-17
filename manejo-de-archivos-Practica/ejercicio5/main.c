@@ -13,20 +13,49 @@ palabras ingresadas por el usuario utilizando dicha estructura en lugar del arch
 #include <string.h>
 #define MAXLONG 50
 
-void agregarPalabra(char **diccionario, char *palabra, int cantPalabras) {
-    //Esta funcion rompe el ejercicio
-    char ** aux = diccionario;
-    aux = realloc(aux, cantPalabras);
-    aux[cantPalabras-1] = palabra;
-    printf("%s", aux[0]);
-}
+struct structNodo {
+    char dato[MAXLONG];
+    struct structNodo *next;
+};
+typedef struct structNodo Nodo;
 
-void printDiccionario(char **diccionario, int cantPalabras) {
-    int i;
-    for (i=0; i<cantPalabras; i++) {
-        printf("%s", diccionario[i]);
+
+void agregarPalabra(Nodo **listaDiccionario, char *palabra) {
+    Nodo *nuevo = (Nodo *) malloc(sizeof(Nodo));
+    if (nuevo != NULL) { //Hay espacio para el nodo
+        strcpy(nuevo->dato, palabra);
+        nuevo->next = NULL;
+        if (*listaDiccionario == NULL) *listaDiccionario = nuevo;
+        else {
+            Nodo *aux = *listaDiccionario;
+            while (aux->next != NULL) {
+                aux = aux->next;
+            }
+            aux->next = nuevo;
+        }
     }
 }
+
+int buscarEnDic(Nodo *listaDiccionario, char *palabra) {
+    int exito = 1;
+    while ((listaDiccionario != NULL) && exito ) {
+        exito = strcmp(listaDiccionario->dato, palabra);
+        listaDiccionario = listaDiccionario->next;
+    }
+    return !exito;
+}
+
+
+
+/*
+void printDiccionario(Nodo *listaDiccionario) {
+    while (listaDiccionario != NULL) {
+        printf("%s -> ", listaDiccionario->dato);
+        listaDiccionario = listaDiccionario->next;
+    }
+    printf("NULL");
+}
+*/
 
 
 int main()
@@ -38,18 +67,24 @@ int main()
     }
 
     //Guardo en estructura dinamica mi diccionario
-    char **diccionario;
+    Nodo *listaDiccionario = NULL;
     char palabra[MAXLONG];
-    int cantPalabras = 0;
-    fgets(palabra, MAXLONG, arch);
+    fscanf(arch, "%s\n", palabra);
     while(!feof(arch)) {
-        cantPalabras++;
-        agregarPalabra(diccionario, palabra, cantPalabras);
-        fgets(palabra, MAXLONG, arch);
+        agregarPalabra(&listaDiccionario, palabra);
+        fscanf(arch, "%s\n", palabra);
     }
-    //printDiccionario(diccionario, cantPalabras);
-
+    agregarPalabra(&listaDiccionario, palabra); //Podria mejorar esto?
     fclose(arch);
+
+    printf("Ingrese palabra: ");
+    scanf("%s", palabra);
+    while(strcmp(palabra, "ZZZ")) {
+        if (buscarEnDic(listaDiccionario, palabra)) printf("La palabra ESTA en el diccionario \n");
+        else printf("La palabra NO ESTA en el diccionario \n");
+        printf("Ingrese palabra: ");
+        scanf("%s", palabra);
+    }
 
     return 0;
 }
