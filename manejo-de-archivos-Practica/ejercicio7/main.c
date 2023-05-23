@@ -72,8 +72,22 @@ int main()
 
 
     //VERSION C
-    //???
+    FILE *arch = fopen("archivoFuente.txt", "rb");
+    FILE *copia = fopen("archivoCopia", "wb");
+    if ((arch == NULL) || (copia == NULL)) {
+        printf("Hubo un error al abrir o crear archivo");
+        return 1;
+    }
+    char c;
 
+    fread(&c, sizeof(char), 1, arch);
+    while (!feof(arch)) {
+        fwrite(&c, sizeof(char), 1, copia);
+        fread(&c, sizeof(char), 1, arch);
+    }
 
+    printf("Successful copy");
 
+    fclose(arch);
+    fclose(copia);
 }
