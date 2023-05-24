@@ -50,7 +50,7 @@ int main()
 }
 
 int actualizarRanking(char *nombre, char *apellido, unsigned int newRank) {
-    FILE *f = fopen("data", "rb+");
+    FILE *f = fopen("../ejercicio9/data", "rb+");
     Jugador j;
     while(fread(&j, sizeof(Jugador), 1, f) != 0) {
         if(!strcmp(j.nombre, nombre) && !strcmp(j.apellido, apellido)) {
@@ -71,7 +71,7 @@ int actualizarRanking(char *nombre, char *apellido, unsigned int newRank) {
 
 void imprimir(int cant) {
 
-    FILE *f = fopen("data", "rb");
+    FILE *f = fopen("../ejercicio9/data", "rb");
     Jugador j;
     for (int i = 0; i< cant; i++) {
         fread(&j, sizeof(Jugador), 1, f);
