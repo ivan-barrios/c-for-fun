@@ -80,6 +80,8 @@ int main()
 
 /*----------------------------------------------------------------------------------*/
 
+//Como carajos hago una busqueda dicotomica en una lista? o tengo que hacer un
+//vector de 5000 elementos?
 int buscar(FILE* fper, Nodo *indice, unsigned dni, Persona * p) {
 
     while (indice != NULL) {
