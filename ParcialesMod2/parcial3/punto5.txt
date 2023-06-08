@@ -1,0 +1,12 @@
+
+
+char *p; char c; char s[10];
+
+a) *(&c) = 'a'; V
+b) free(*p); F
+c) scanf("%c",c); F 
+d) p[0]= *(s+0); V
+e) c = "z"; F
+f) p = &s; F
+g) p = s+5; F
+h) p = &c; V

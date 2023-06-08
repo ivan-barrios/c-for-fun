@@ -1,0 +1,6 @@
+4) Indique si es verdadero o falso
+a) No es posible determinar la posición de memoria en la que se encuentra un campo de una variable de tipo struct.. FALSO
+b) La función ftell con parámetro SEEK_END permite posicionarse al final de un archivo. VERDADERO
+c) La función fflush permite borrar el contenido de un archivo. FALSO
+d) Los archivos abiertos en modo “a” o “ab” descartan el contenido actual del mismo. FALSO
+e) La función fprintf se puede utilizar tanto para escribir en un archivo como para escribir en pantalla. VERDADERO

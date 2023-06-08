@@ -1,0 +1,6 @@
+2) Para cada inciso indique si es verdadero o falso.
+a) Las variables static tienen visibilidad como las variables globales. FALSO
+b) Se puede asignar una variable de tipo double a una variable float sin inconvenientes. VERDADERO
+c) Es posible asignar tanto true/false como 1/0 a una variable de tipo bool. FALSO
+d) Para regresar de la ejecución de una función es necesario ejecutar la instrucción return. FALSO (depende de la funcion)
+e) El lenguaje C no soporta pasaje de parámetros por referencia. VERDADERO
