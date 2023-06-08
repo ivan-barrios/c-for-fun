@@ -1,0 +1,28 @@
+1. Para cada inciso indique si es verdadero o falso.
+a) Cuando se pasa como parámetro un arreglo se pasa su dirección por referencia. F (Se pasa una copia)
+b) El operador * (de indirección) se puede utilizar acceder al contenido de memoria de un arreglo. V
+c) Un arreglo puede manipularse como un puntero, pero un puntero no puede manipularse como un arreglo. F
+d) Los arreglos se pueden copiar con una asignación siempre y cuando tengan el mismo tipo. F
+e) Es posible asignar una variable float a una variable int sin inconvenientes. F
+f) Se puede asignar una variable de tipo float a una variable double sin inconvenientes F
+
+2. Para cada inciso indique si es verdadero o falso.
+a) Dos variables definidas como estructuras solo pueden compararse solo si tienen el mismo tipo. F
+b) El operador -> puede utilizarse cuando se tiene un puntero a cualquier tipo de dato. F
+c) typedef puede utilizarse para definir tanto un tipo estructura como un tipo predefinido. V
+d) No es posible determinar la posición de memoria de un campo de una variable de tipo struct. F
+e) Dos variables de tipo struct no pueden asignarse, aunque tengan el mismo tipo. F
+f) Un arreglo de estructuras se pasa por referencia a una función de manera automática. V
+
+3) 
+    "Nada"
+    "Hola"
+    "Hola"
+
+6. Marque con verdadero o falso las siguientes afirmaciones:
+a) Para duplicar un archivo de texto es mejor utilizar las funciones fgets/fputs que fread/fwrite. V
+b) La función feof retorna falso cuando se alcanza el último byte de un archivo. F
+c) La función fprintf puede utilizar tanto para escribir en un archivo como para escribir en pantalla. V
+d) La función ftell con parámetro SEEK_END permite posicionarse al final de un archivo. F
+e) El tamaño de un archivo binario de struct{int hora; int min;} es menor que su equivalente de texto. V
+f) fgets(stdout) equivale a gets(). F
